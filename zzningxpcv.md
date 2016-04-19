@@ -1,9 +1,7 @@
 Zhaoning Zhang
-
 Assistant Researcher
 
 National Laboratory for Parallel and Distributed Processing
-
 School of Computer, National Univ.of Defense Tech., Changsha, China 
 
 Email: zzningxp@gmail.com
