@@ -1,6 +1,9 @@
 # vmthunder
 Experiment prototype for the TPDS Paper VMThunder (25.12, 2014: 3328-3338)
 
+[VMThunder: fast provisioning of large-scale virtual machine clusters](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6719385)
+
+And  Frontiers of Computer Science, 2016 Paper: [Large-scale virtual machines provisioning in clouds: challenges and approaches](http://link.springer.com/article/10.1007/s11704-015-4420-7)
 
 ##简述
 
