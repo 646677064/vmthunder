@@ -1,0 +1,6 @@
+
+a=`ssh $1 ps -ef | grep tgtd | grep -v scsi | awk '{print $2}'`
+echo $a
+for i in `echo $a`; do ssh $1 kill -9 $i; done
+ssh $1 /etc/init.d/tgtd start
+

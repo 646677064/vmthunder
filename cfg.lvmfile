@@ -1,0 +1,18 @@
+vgname=$1
+#snapname=$2
+
+mkdir /srv/lvm
+dd if=/dev/zero of=/srv/lvm/lvm0.iso bs=1M count=1 seek=265000
+losetup /dev/loop7 /srv/lvm/lvm0.iso 
+pvcreate /dev/loop7 
+vgcreate -s 4k $vgname /dev/loop7 
+#lvcreate -L 20G -n $snapname $vgname
+
+## create the initial root lvm
+# dd if=/dev/zero of=/srv/lvm/$vgname.iso bs=1M count=1 seek=265000
+# losetup /dev/loop7 /srv/lvm/$vgname.iso
+# pvcreate /dev/loop7
+# vgcreate -s 4k $vgname /dev/loop7
+# lvcreate -L 10G -n centosfull $vgname
+#
+

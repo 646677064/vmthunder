@@ -1,0 +1,12 @@
+workdir=/root/sftsan/
+nodes=`cat $workdir/nodes`
+
+for i in $nodes
+do
+	ssh $i mkdir $workdir
+        scp cfg.* $i:/root/sftsan/ &
+	scp decfg.* $i:/root/sftsan/ &
+done
+wait
+echo "----- All config files transfer done ------"
+

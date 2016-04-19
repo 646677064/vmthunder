@@ -1,0 +1,4 @@
+vgname=$1
+snapname=$2
+
+lvcreate -L 20G -n $snapname $vgname

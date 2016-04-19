@@ -1,0 +1,4 @@
+for i in `ps -ef | grep blktrace | grep -v grep | awk '{print $2}'`
+do
+	kill -15 $i
+done

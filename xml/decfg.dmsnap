@@ -1,0 +1,2 @@
+dmsetup remove snapshot-1
+dmsetup remove snapshot-origin

@@ -1,0 +1,4 @@
+mkdir /root/sftsan/ramfs/ 2>/dev/null
+mount -t ramfs -o size=4096m ramfs /root/sftsan/ramfs/
+dd if=/dev/zero of=/root/sftsan/ramfs/ramfs.bd bs=1M count=4096
+losetup /dev/loop6 /root/sftsan/ramfs/ramfs.bd 

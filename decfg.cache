@@ -1,0 +1,5 @@
+dmsetup remove cachedev
+flashcache_destroy /dev/loop6
+losetup -d /dev/loop6
+rm -f /root/sftsan/ramfs/ramfs.bd
+umount /root/sftsan/ramfs

@@ -1,0 +1,3 @@
+snapname=$1
+
+lvcreate -L 20G -n $snapname vg_newpdl

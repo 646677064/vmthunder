@@ -1,0 +1,10 @@
+imagename=$1
+numsnap=$2
+
+for i in `seq $numsnap `
+do
+	snapname=snp-${imagename}_$i
+	snaporigin=ori-${imagename}_$i
+	dmsetup remove $snapname
+	dmsetup remove $snaporigin
+done

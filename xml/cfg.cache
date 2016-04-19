@@ -1,0 +1,6 @@
+sleep 0.2s
+#blockdev --setra 0 /dev/sdb
+flashcache_create -p back -s 4g -b 4k cachedev /dev/loop6 /dev/mapper/vgzznx0-centosfull
+sleep 0.2s
+#blockdev --setra 0 /dev/mapper/cachedev
+

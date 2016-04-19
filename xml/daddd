@@ -1,0 +1,1 @@
+iscsiadm -m session -P 3 | grep -E 'Attached scsi disk|Target:|Persistent Portal' | awk '{if (NR%3==0){print $0} else {printf"%s ",$0}}' - | awk '{print $9 " \t" $5 " \t" $2 " \t" $11}' | sort

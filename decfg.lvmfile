@@ -1,0 +1,6 @@
+
+lvremove -f /dev/mapper/vgzznxx-lvmsnapshot1
+vgremove -f vgzznxx
+pvremove /dev/loop7
+losetup -d /dev/loop7
+rm -f /srv/lvm/lvm0.iso

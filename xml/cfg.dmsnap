@@ -1,0 +1,7 @@
+modprobe dm_snapshot
+echo 0 `blockdev --getsz /dev/mapper/vg_newpdl-centos6test1 ` snapshot-origin /dev/mapper/vg_newpdl-centos6test1 | dmsetup create disksnap-origin
+echo 0 `blockdev --getsz /dev/mapper/vgzznxx-centos6test1 ` snapshot-origin /dev/mapper/vgzznxx-centos6test1 | dmsetup create filesnap-origin
+#lvcreate -L 20G -n centos6snap1 vg_newpdl
+#lvcreate -L 20G -n centos6snap1 vgzznxx
+echo 0 `blockdev --getsz /dev/mapper/vg_newpdl-centos6test1 ` snapshot /dev/mapper/disksnap-origin /dev/mapper/vg_newpdl-centos6snap1 N 128 | dmsetup create disksnap-1
+echo 0 `blockdev --getsz /dev/mapper/vgzznxx-centos6test1 ` snapshot /dev/mapper/filesnap-origin /dev/mapper/vgzznxx-centos6snap1 N 128 | dmsetup create filesnap-1

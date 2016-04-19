@@ -1,0 +1,8 @@
+#cd /root/sftsan/
+#tar zxf /root/sftsan/flashcache-parallel.tar.gz 
+cd /root/flashcache-parallel/
+make
+make install
+#make KERNEL_TREE=/usr/src/kernels/2.6.32-131.0.15.el6.x86_64/
+#make KERNEL_TREE=/usr/src/kernels/2.6.32-131.0.15.el6.x86_64/ install
+flashcache_create

@@ -1,0 +1,1 @@
+qemu-img create -f qcow2 -b /dev/mapper/cachedev /root/sftsan/xml/snapshot.img

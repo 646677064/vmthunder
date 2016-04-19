@@ -1,0 +1,19 @@
+for i in `cat nodes `
+do
+	echo $i
+	ssh $i sh /root/sftsan/decfg.blkstop
+done
+
+sleep 2s
+t=0
+for i in `tac nodes `
+do
+	#ssh $i blkparse -i tmp/cachedev.blktrace.* -o /tmp/blkout
+	scp $i:/tmp/blkout /tmp/blkn$t
+	((t=t+1))
+done
+
+tm=`date +"%m-%d-%T"`
+tar zcf /tmp/blk.$tm.tar.gz /tmp/blkn*
+rm -f /tmp/blkn*
+scp /tmp/blk.$tm.tar.gz 172.16.0.3:/tmp/

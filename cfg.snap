@@ -1,0 +1,19 @@
+imagename=$1
+numsnap=$2
+workdir=$3
+
+modprobe dm_snapshot
+for isnap in `seq $numsnap `
+do
+
+	snapdev=sdev_${imagename}_$isnap
+	snaporigin=ori-${imagename}_$isnap
+	snapname=snp-${imagename}_$isnap
+
+	sh $workdir/cfg.lvm $snapdev
+	snapdev=vg_newpdl-$snapdev
+
+	echo 0 `blockdev --getsz /dev/mapper/cachedev` snapshot-origin /dev/mapper/cachedev | dmsetup create $snaporigin
+	echo 0 `blockdev --getsz /dev/mapper/cachedev` snapshot /dev/mapper/$snaporigin /dev/mapper/$snapdev N 128 | dmsetup create $snapname
+
+done

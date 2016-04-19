@@ -1,0 +1,2 @@
+iscsiadm -m discovery -t sendtargets -p $1 
+iscsiadm -m node -T $2 -p $1 --login

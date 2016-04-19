@@ -1,0 +1,8 @@
+imagename=$1
+numsnap=$2
+workdir=$3
+
+for isnap in `seq $numsnap `
+do
+	rm -f ${workdir}/snap-$imagename-$isnap.img
+done

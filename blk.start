@@ -1,0 +1,5 @@
+for i in `cat nodes `
+do
+	#echo $i 
+	ssh $i sh /root/sftsan/cfg.blkstart /dev/mapper/cachedev blkout &
+done

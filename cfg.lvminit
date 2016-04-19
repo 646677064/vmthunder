@@ -1,0 +1,11 @@
+losetup /dev/loop7 /srv/lvm/vgzznx0.iso
+vgchange -a y vgzznxx
+
+for i in `cat nodes `
+do
+echo
+echo "----" $i "----"
+ssh $i losetup /dev/loop7 /srv/lvm/lvm0.iso
+ssh $i vgchange -a y vgzznxx
+ssh $i lvs
+done

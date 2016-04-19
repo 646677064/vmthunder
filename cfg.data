@@ -1,0 +1,20 @@
+imagenode=192.168.0.152
+
+imagename=ubuntu12
+numsnap=2
+vgname=vgdata
+imagedev=/dev/mapper/vgdata-lvdata1
+
+degree=1
+workdir=/root/sftsan/
+
+nodes=`cat $workdir/nodes`
+
+cachesize=4096
+cacheoridev=/dev/sdh
+cacheloopdev=/dev/loop6
+
+dmsnap=dmsnap
+qcsnap=qcsnap
+snaptype=$dmsnap
+#snaptype=$qcsnap

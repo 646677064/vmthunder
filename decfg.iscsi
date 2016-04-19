@@ -1,0 +1,6 @@
+
+
+ip=`iscsiadm -m session | awk '{print $3}' | awk -F: '{print $1}'`
+name=`iscsiadm -m session | awk '{print $4}'`
+
+iscsiadm -m node -T $name -p $ip --logout

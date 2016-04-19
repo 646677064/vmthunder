@@ -1,0 +1,4 @@
+vgname=$1
+snapname=$2
+
+lvremove -f /dev/mapper/$vgname-$snapname

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+. /root/sftsan/cfg.data
+
+for node in $nodes
+do
+        ssh $node "sh $workdir/decfg.iscsi " &
+done
+wait
+echo "----- All iscsi session destroyed ------"
+
+for node in $nodes
+do
+        ssh $node "sh $workdir/decfg.target " &
+done
+wait
+echo "----- All target destroyed ------"
+
+sh $workdir/decfg.target
+echo "----- Image host target destroyed ------"
+
+for node in $nodes
+do
+        if [ $snaptype = $dmsnap ]
+        then
+	        ssh $node "sh $workdir/decfg.dmsnap $imagename $numsnap $workdir" &
+	elif [ $snaptype = $qcsnap ]
+	then
+	        ssh $node "sh $workdir/decfg.qcsnap $imagename $numsnap $workdir" &
+	fi
+done
+wait
+echo "----- All snapdev destroyed ------"
+
+for node in $nodes
+do
+        ssh $node "sh $workdir/decfg.cache " &
+done
+wait
+echo "----- All cache destroyed ------"

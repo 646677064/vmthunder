@@ -1,0 +1,9 @@
+dev=$1
+outfile=$2
+
+umount /sys/kernel/debug/
+mount -t debugfs debugfs /sys/kernel/debug/
+echo stacktrace > /sys/kernel/debug/tracing/trace_options
+
+#mkdir tmp
+blktrace -d $dev -o - | blkparse -i - > /tmp/$outfile &

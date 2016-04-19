@@ -1,0 +1,6 @@
+
+tid=1
+lunid=1
+
+tgtadm --lld iscsi --mode logicalunit --op delete --tid $tid --lun $lunid
+tgtadm --lld iscsi --mode target --op delete --tid $tid
