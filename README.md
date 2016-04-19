@@ -5,6 +5,8 @@ Experiment prototype for the TPDS Paper VMThunder (25.12, 2014: 3328-3338)
 
 And  Frontiers of Computer Science, 2016 Paper: [Large-scale virtual machines provisioning in clouds: challenges and approaches](http://link.springer.com/article/10.1007/s11704-015-4420-7)
 
+[VMThunder for OpenStack by our team from PDL@NUDT ](https://github.com/vmthunder)
+
 ##简述
 
 Sftsan软件包（该repo代码系统）是VMThunder系统的代码实现，其功能是为大规模物理机集群上快速部署并启动大批量虚拟机提供高效的存储系统，即sftsan是VMThunder中为虚拟机提供虚拟磁盘的存储系统。
