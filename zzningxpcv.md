@@ -1,4 +1,4 @@
-Zhaoning Zhang
+Zhaoning Zhang, 
 Assistant Researcher
 
 National Laboratory for Parallel and Distributed Processing
